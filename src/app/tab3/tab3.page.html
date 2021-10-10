@@ -1,3 +1,4 @@
+
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -12,65 +13,35 @@
       <ion-title size="large">Physical Fitness</ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-row><ion-col><div class="title">At Home Workouts</div></ion-col></ion-row>
+<ion-row>
+  <ion-col>
+    <div>5 min Quick Workout</div>
+    <div>Repeat 2x</div>
+    <div>30sec Jumping Jacks</div>
+    <div>30sec Pushups</div>
+    <div>30sec High Knees</div>
+    <div>30sec Mountain Climbers</div>
+    <div>30sec Squat Jumps</div>
+    <div><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/highkneerun-1457044203.gif"></div>
+    <div><img src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/workouts/2016/03/bodyweightsquatjump-1457041758.gif"></div>
+  </ion-col>
+  <ion-col>
+    <div><img src="https://acceleratetv.com/wp-content/uploads/2020/03/jumping-Jacks-Exercise.gif"></div>
+    <div><img src="https://thumbs.gfycat.com/GlossySkinnyDuckbillcat-max-1mb.gif"></div>
+    <div><img src="https://i.pinimg.com/originals/a5/f6/55/a5f6556329ff8d9f9dd71f0dd6ae1355.gif"></div>
+ 
+  </ion-col>
+</ion-row>
+<h2>BUILT IN TIMER</h2>
+<ion-row class="ion-justify-content-center">
+  <h1>{{time | async}}</h1>
+</ion-row>
 
-  <!-- List of Text Items -->
-<ion-list>
-  <ion-item>
-    <ion-label>Pokémon Yellow</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Mega Man X</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>The Legend of Zelda</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Pac-Man</ion-label>
-  </ion-item>
-  <ion-item>
-    <ion-label>Super Mario World</ion-label>
-  </ion-item>
-</ion-list>
 
-<!-- List of Input Items -->
-<ion-list>
-  <ion-item>
-    <ion-label>Input</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-  <ion-item>
-    <ion-label>Toggle</ion-label>
-    <ion-toggle slot="end"></ion-toggle>
-  </ion-item>
-  <ion-item>
-    <ion-label>Radio</ion-label>
-    <ion-radio slot="end"></ion-radio>
-  </ion-item>
-  <ion-item>
-    <ion-label>Checkbox</ion-label>
-    <ion-checkbox slot="start"></ion-checkbox>
-  </ion-item>
-</ion-list>
-
-<!-- List of Sliding Items -->
-<ion-list>
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>Item</ion-label>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option (click)="unread(item)">Unread</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-
-  <ion-item-sliding>
-    <ion-item>
-      <ion-label>Item</ion-label>
-    </ion-item>
-    <ion-item-options side="end">
-      <ion-item-option (click)="unread(item)">Unread</ion-item-option>
-    </ion-item-options>
-  </ion-item-sliding>
-</ion-list>
-  
 </ion-content>
+
+<ion-footer>
+  <ion-button *ngIf="state === 'stop'" expand="block" color="primary" (click)="startTimer(startDuration)">START</ion-button>
+<ion-button *ngIf="state === 'start'" expand="block" color="danger" (click)="stopTimer(0)">STOP</ion-button>
+</ion-footer>
