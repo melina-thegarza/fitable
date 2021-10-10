@@ -5,6 +5,22 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'stress',
+    loadChildren: () => import('./stress/stress.module').then( m => m.StressPageModule)
+  },
+  {
+    path: 'workout',
+    loadChildren: () => import('./workout/workout.module').then( m => m.WorkoutPageModule)
+  },
+  {
+    path: 'motivation',
+    loadChildren: () => import('./motivation/motivation.module').then( m => m.MotivationPageModule)
+  },
+  {
+    path: 'fuel',
+    loadChildren: () => import('./fuel/fuel.module').then( m => m.FuelPageModule)
   }
 ];
 @NgModule({
